@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "devopsworkshop-deployment"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: "devopsworkshop"
+  template:
+    metadata:
+      labels:
+        app: "devopsworkshop"
+    spec:
+      containers:
+        - image: "nginx:alpine"
+          name: nginx
+          ports:
+            - containerPort: 80
