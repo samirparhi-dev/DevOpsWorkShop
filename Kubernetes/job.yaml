@@ -1,3 +1,6 @@
+
+#Multiple Parallel Jobs
+##########################################
 #The Job now has the following behavior: 
 #five pods will get launched at the same time; all of them are execution the same Job. 
 #When one of the pods terminates successfully, this means that the whole Job is done. 
@@ -19,6 +22,8 @@ template:
       args: ["echo 'consuming a message'; sleep $(shuf -i 5-10 -n 1)"]
     restartPolicy: OnFailure
 ---
+#Limiting The Kubernetes Job Execution Time
+#############################################
 #we are instructing the container to echo some text, sleep for one second, and then exit with a non-zero status (unsuccessful exit). 
 #Notice that we intentionally set the deadline to be twenty seconds while the backofflimit is 5
 apiVersion: batch/v1
