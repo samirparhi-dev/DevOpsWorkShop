@@ -9,4 +9,4 @@ USER root
 RUN dnf install -y vim
 
 USER swuser
-CMD ["sh", "whoami"]
+CMD ["whoami"]
