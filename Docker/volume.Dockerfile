@@ -1,4 +1,6 @@
 # VOLUME example
-FROM ubuntu
-RUN apt-get update && apt-get install apache2 -y
-VOLUME ["/var/log/apache2"]
+FROM ubuntu:latest
+RUN mkdir /data
+WORKDIR /data
+RUN echo "Hello from Volume" > test
+VOLUME /data
