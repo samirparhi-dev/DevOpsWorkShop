@@ -1,5 +1,6 @@
 # EXPOSE & HEALTHCHECK example
-FROM httpd:2.4 
+FROM ubuntu:trusty
 HEALTHCHECK CMD curl -f http://localhost/ || exit 1
+ENTRYPOINT ["/bin/ping","-c","3"]
+CMD ["localhost"]
 EXPOSE 80
-ENTRYPOINT ["apache2ctl", "-D", "FOREGROUND"]
