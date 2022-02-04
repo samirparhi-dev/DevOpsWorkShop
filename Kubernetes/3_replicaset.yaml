@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: webserver-replicaset-example
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: webserver-replicaset-example
+  template:
+    metadata:
+      labels:
+        app: webserver-replicaset-example
+    spec:
+      containers:
+      - name: webserver-replicaset-example
+        image: my-webserver
