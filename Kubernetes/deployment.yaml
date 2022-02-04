@@ -1,3 +1,4 @@
+#First run the "webserver.Dockerfile"  and make the image available locally.
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -13,7 +14,7 @@ spec:
         app: "devopsworkshop"
     spec:
       containers:
-        - image: "nginx:alpine"
-          name: nginx
+        - image: "my-webserver"
+          name: webserver1
           ports:
             - containerPort: 80
