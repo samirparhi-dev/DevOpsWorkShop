@@ -6,5 +6,5 @@ metadata:
     name: "devopsworkshop-pod"
 spec:
   containers:
-    - image: "nginx:alpine"
-      name: nginx
+    - image: "my-webserver"
+      name: webserver1
