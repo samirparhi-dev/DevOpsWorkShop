@@ -1,12 +1,9 @@
 # Using GCP and Terraform
 
 ## Installation
-1. Clone project locally
-```bash
-$ git clone https://github.com/thiagofernandocosta/gcp_vm-in-few-steps && cd gcp_vm-in-few-steps
-```
 
-2. Install **Terraform**
+
+1. Install **Terraform**
 
 `Linux`
 ```bash
