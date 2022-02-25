@@ -14,7 +14,7 @@ spec:
         app: "devopsworkshop"
     spec:
       containers:
-        - image: "my-webserver"
+        - image: nginx
           name: webserver1
           ports:
             - containerPort: 80

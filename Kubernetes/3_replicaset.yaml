@@ -13,5 +13,5 @@ spec:
         app: webserver-replicaset-example
     spec:
       containers:
-      - name: webserver-replicaset-example
+      - name: nginx
         image: my-webserver
