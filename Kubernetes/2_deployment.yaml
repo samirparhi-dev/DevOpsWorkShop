@@ -18,3 +18,4 @@ spec:
           name: webserver1
           ports:
             - containerPort: 80
+# kubectl port-forward pods/mongo-75f59d57f4-4nd6q 806:80
