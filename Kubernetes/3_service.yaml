@@ -1,10 +1,19 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: "devopsworkshop-service"
+  name: the-service
 spec:
-  ports:
-    - port: 8080
-      targetPort: 80
   selector:
-    app: "devopsworkshop"
+    app: devops-demo
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
+  
+  #watch kubectl get services
+  #On Minikube without an Ingress controller, <pending> will not become a real external IP. Optional: Setup Minikube Ingress
+  #https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/
+  #IP=$(minikube ip -p devnation)
+  #PORT=$(kubectl get service/the-service -o jsonpath="{.spec.ports[*].nodePort}")
+  #curl $IP:$PORT
