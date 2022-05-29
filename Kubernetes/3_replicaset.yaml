@@ -21,3 +21,4 @@ spec:
      #kubectl get rs
      #kubectl describe rs rs-devops-demo
      #kubectl delete pod rs-devops-demo-<<id>>
+     #kubectl delete rs rs-devops-demo
