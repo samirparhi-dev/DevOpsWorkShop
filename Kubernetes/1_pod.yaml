@@ -1,10 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: quarkus-demo
+  name: Devops-demo
 spec:
   containers:
-  - name: quarkus-demo
+  - name: Devops-demo
     image: quay.io/rhdevelopers/quarkus-demo:v1
     
-#kubectl exec -it quarkus-demo /bin/sh
+#kubectl exec -it devops-demo /bin/sh
+#curl localhost:8080
