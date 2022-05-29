@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+        env: dev
+    spec:
+      containers:
+      - name: myapp
+        image: quay.io/rhdevelopers/myboot:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        
+#kubectl get deployment my-deployment -o json | jq '.status.replicas'
+#kubectl scale --replicas=3 deployment/my-deployment
+#kubectl logs my-deployment-5dc67997c7-m7z9f
+#kubectl logs my-deployment-5dc67997c7-m7z9f -f
+#kubectl exec -it my-deployment-5dc67997c7-m7z9f /bin/bash curl localhost:8080
