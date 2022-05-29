@@ -1,17 +1,23 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: webserver-replicaset-example
+    name: rs-devops-demo
 spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: webserver-replicaset-example
-  template:
-    metadata:
-      labels:
-        app: webserver-replicaset-example
-    spec:
-      containers:
-      - name: nginx
-        image: my-webserver
+    replicas: 3
+    selector:
+       matchLabels:
+          app: devops-demo
+    template:
+       metadata:
+          labels:
+             app: devops-demo
+             env: dev
+       spec:
+          containers:
+          - name: devops-demo
+            image: quay.io/rhdevelopers/quarkus-demo:v1
+            
+     #watch kubectl get pods --show-labels
+     #kubectl get rs
+     #kubectl describe rs rs-devops-demo
+     #kubectl delete pod rs-devops-demo-<<id>>
