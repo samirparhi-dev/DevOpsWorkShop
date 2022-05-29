@@ -1,21 +1,24 @@
-#First run the "webserver.Dockerfile"  and make the image available locally.
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "devopsworkshop-deployment"
+  name: devops-demo-deployment
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: "devopsworkshop"
+      app: quarkus-demo
   template:
     metadata:
       labels:
-        app: "devopsworkshop"
+        app: devops-demo
+        env: dev
     spec:
       containers:
-        - image: nginx
-          name: webserver1
-          ports:
-            - containerPort: 80
-# kubectl port-forward pods/mongo-75f59d57f4-4nd6q 806:80
+      - name: devops-demo
+        image: quay.io/rhdevelopers/quarkus-demo:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        
+#kubectl get pods --show-labels
+#kubectl exec -it devops-demo-deployment-5979886fb7-c888m -- curl localhost:8080
