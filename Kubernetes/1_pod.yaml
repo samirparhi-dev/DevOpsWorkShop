@@ -6,3 +6,5 @@ spec:
   containers:
   - name: quarkus-demo
     image: quay.io/rhdevelopers/quarkus-demo:v1
+    
+#kubectl exec -it quarkus-demo /bin/sh
